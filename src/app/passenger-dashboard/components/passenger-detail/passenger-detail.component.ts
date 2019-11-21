@@ -27,7 +27,7 @@ import { Passenger } from '../../modules/passenger-interface';
         </button>
 
         <button (click)="onRemove()">
-        Remove
+          Remove
         </button>
     </div>
   `
