@@ -28,11 +28,10 @@ export class PassengerDashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    
-     var res = this.passengerService
-      .getPassenger()
+    this.passengerService
+      .getPassengers()
       .subscribe((data: Passenger[]) => {
-       this.passengers = data;
+        this.passengers = data;
       });
   }
 
@@ -43,13 +42,16 @@ export class PassengerDashboardComponent implements OnInit {
   }
 
   handleEdit(event: Passenger) {
-    this.passengers = this.passengers.map((passenger: Passenger) => {
-      if (passenger.id == event.id) {
-        passenger = Object.assign({}, passenger, event);
-      }
-      return passenger;
-    });
-
-    console.log(this.passengers);
+    console.log(event);
+    this.passengerService
+      .updatePassenger(event)
+      .subscribe((data: Passenger) => {
+        this.passengers = this.passengers.map((passenger: Passenger) => {
+          if (passenger.id == event.id) {
+            passenger = Object.assign({}, passenger, event);
+          }
+          return passenger;
+        });
+      });
   }
 }
