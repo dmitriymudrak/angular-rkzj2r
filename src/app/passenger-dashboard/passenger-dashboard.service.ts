@@ -3,9 +3,6 @@ import { Passenger } from "./modules/passenger-interface";
 import { Http, Response, Headers, RequestOptions } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
-import { throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-
 
 
 const PASSENGER_API: string = "http://localhost:3000/passengers";
@@ -18,6 +15,11 @@ export class PassengerDashboardService {
     return this.http.get(PASSENGER_API)
     .map((response: Response) => response.json());
     // .catch( (error: any) => Observable.throw(error.json()));
+  }
+
+  getPassenger(id: number): Observable<Passenger> {
+    return this.http.get(`${PASSENGER_API}/${id}`)
+    .map((response: Response) => response.json());
   }
 
   updatePassenger(passenger: Passenger): Observable<Passenger> {

@@ -1,18 +1,32 @@
 {
   "passengers": [
     {
+      "fullname": "One1",
       "id": 1,
-      "fullname": "Dmitro 2sad",
       "checkedIn": true,
-      "checkInDate": 1490742000000,
-      "children": null
+      "baggage": "none",
+      "checkInDate": 1490742000000
     },
     {
       "id": 2,
-      "fullname": "Dmitro",
+      "fullname": "Two",
       "checkedIn": true,
       "checkInDate": 1490742000000,
-      "children": null
+      "baggage": "Bag"
+    },
+    {
+      "id": 3,
+      "fullname": "Three",
+      "checkedIn": true,
+      "checkInDate": 1490742000000,
+      "baggage": "Bag"
+    },
+    {
+      "id": 4,
+      "fullname": "Four",
+      "checkedIn": true,
+      "checkInDate": 1490742000000,
+      "baggage": "Bag"
     }
   ]
 }

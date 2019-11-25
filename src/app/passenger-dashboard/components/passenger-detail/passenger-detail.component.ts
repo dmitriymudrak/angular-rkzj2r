@@ -19,9 +19,6 @@ import { Passenger } from '../../modules/passenger-interface';
           Check in date:
           {{ detail.checkInDate ? (detail.checkInDate | date:'medium') : '' }}
         </div>
-        <div class="children">
-          Children: {{ detail.children?.length || 0 }}
-        </div>
         <button (click)="toggleEdit()">
         {{editing ? 'Done' : 'Edit'}}
         </button>
